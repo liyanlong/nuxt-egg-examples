@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-egg-example",
+  "version": "1.0.0",
+  "description": "liyl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "egg-bin dev",
+    "start": "cross-env EGG_SERVER_ENV=prod NODE_ENV=production egg-bin dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^0.12.0"
+  },
+  "devDependencies": {
+    "cross-env": "^3.1.4",
+    "egg-bin": "^2.2.0"
+  }
+}
