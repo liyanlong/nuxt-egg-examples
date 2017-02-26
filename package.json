@@ -1,20 +1,46 @@
 {
-  "name": "nuxt-egg-example",
+  "name": "nuxt-egg-examples",
   "version": "1.0.0",
-  "description": "liyl",
-  "main": "index.js",
+  "description": "nuxt-egg project",
+  "author": "liyl",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "egg-bin dev",
-    "start": "cross-env EGG_SERVER_ENV=prod NODE_ENV=production egg-bin dev"
+    "watch": "nodemon  --exec babel-node -w config/config.nuxt.js -w app/ node server.js",
+    "start": "NODE_ENV=production egg-bin dev",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "ci": "npm run lint && npm run cov",
+    "precommit": "npm run lint"
   },
-  "author": "",
-  "license": "ISC",
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  },
   "dependencies": {
-    "egg": "^0.12.0"
+    "nuxt-egg": "latest"
   },
   "devDependencies": {
-    "cross-env": "^3.1.4",
-    "egg-bin": "^2.2.0"
+    "egg-bin": "^2.0.2",
+    "egg-mock": "^2.0.0",
+    "supertest": "^2.0.1",  
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.15.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-html": "^2.0.0",
+    "eslint-plugin-promise": "^3.4.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "nodemon": "^1.11.0"
+  },
+  "egg": {
+    "framework": "nuxt-egg"
   }
 }

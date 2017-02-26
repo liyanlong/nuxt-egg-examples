@@ -1,4 +1,5 @@
-// app/router.js
+'use strict';
+
 module.exports = app => {
-  app.get('/', 'home.index');
+  app.resources('topic', '/api/v2/topics', 'topic');
 };

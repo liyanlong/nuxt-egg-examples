@@ -1,4 +1,19 @@
-.idea/
-run/
-logs/
-node_modules/
+# dependencies
+node_modules
+coverage
+test/fixtures
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Egg
+run
+*-run
+log
+
+
+# MacOS
+.DS_Store
